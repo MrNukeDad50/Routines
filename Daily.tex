@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages for better formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\title{Daily System Administrator Routine}
+\author{IT Operations}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Purpose}
+This document outlines the daily routine for a system administrator to verify the health, security, and performance of key system components, functions, and services. The goal is to ensure consistent uptime, security compliance, and rapid detection of potential issues.
+
+\section{Pre-Check Preparation}
+\begin{itemize}[leftmargin=1.5em]
+    \item Log into the administration dashboard or jump host with appropriate credentials.
+    \item Open system monitoring tools (e.g., Nagios, Zabbix, Grafana).
+    \item Prepare the \textit{Daily Status Log Sheet}.
+\end{itemize}
+
+\section{Daily Checklist}
+
+\subsection{1. Firewall Status}
+\begin{itemize}[leftmargin=1.5em]
+    \item Verify firewall service is running.
+    \item Review access logs for anomalies.
+    \item Confirm rule sets are unchanged from the approved baseline.
+\end{itemize}
+
+\subsection{2. DNS Service}
+\begin{itemize}[leftmargin=1.5em]
+    \item Check DNS service status on primary and secondary servers.
+    \item Test forward and reverse lookups for key domains.
+    \item Verify DNS propagation where applicable.
+\end{itemize}
+
+\subsection{3. Email Service}
+\begin{itemize}[leftmargin=1.5em]
+    \item Confirm mail server processes are running.
+    \item Check the mail queue for stuck or failed messages.
+    \item Review spam and security logs for irregular activity.
+\end{itemize}
+
+\subsection{4. User Logins and Security}
+\begin{itemize}[leftmargin=1.5em]
+    \item Review failed login attempts in the last 24 hours.
+    \item Verify that privileged accounts are not being misused.
+    \item Confirm recent user account changes were authorized.
+\end{itemize}
+
+\subsection{5. Server Status}
+\begin{itemize}[leftmargin=1.5em]
+    \item Verify all critical servers are online.
+    \item Check CPU, memory, and disk usage.
+    \item Review recent system logs for warnings or errors.
+\end{itemize}
+
+\subsection{6. Service Status}
+\begin{itemize}[leftmargin=1.5em]
+    \item Ensure web, database, and application services are running.
+    \item Test application front-ends for responsiveness.
+    \item Verify scheduled backups completed successfully.
+\end{itemize}
+
+\section{Daily Status Log Sheet}
+\begin{longtable}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
+\hline
+\textbf{Component} & \textbf{Status (OK/Issue)} & \textbf{Action Taken} & \textbf{Notes} \\
+\hline
+Firewall & & & \\ \hline
+DNS & & & \\ \hline
+Email & & & \\ \hline
+User Logins & & & \\ \hline
+Server Health & & & \\ \hline
+Services & & & \\ \hline
+Backups & & & \\ \hline
+\end{longtable}
+
+\section{End-of-Day Wrap-Up}
+\begin{itemize}[leftmargin=1.5em]
+    \item Submit completed log sheet to IT management.
+    \item Document any unresolved issues in the incident tracking system.
+    \item Ensure all admin sessions are securely logged out.
+\end{itemize}
+
+\end{document}
